@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15987D871FF42B180056224C /* Healthcare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15987D861FF42B180056224C /* Healthcare.swift */; };
+		15987D891FF42C4B0056224C /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15987D881FF42C4B0056224C /* Hospital.swift */; };
+		15987D8B1FF42D1A0056224C /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15987D8A1FF42D1A0056224C /* Patient.swift */; };
+		15987D8D1FF42E070056224C /* PIN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15987D8C1FF42E070056224C /* PIN.swift */; };
+		15987D8F1FF42E440056224C /* PostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15987D8E1FF42E440056224C /* PostalAddress.swift */; };
 		15B9D8851FF3E50800327153 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B9D8841FF3E50800327153 /* AppDelegate.swift */; };
 		15B9D88A1FF3E50800327153 /* Lasp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15B9D8881FF3E50800327153 /* Lasp.xcdatamodeld */; };
 		15B9D88C1FF3E50800327153 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15B9D88B1FF3E50800327153 /* Assets.xcassets */; };
@@ -35,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15987D861FF42B180056224C /* Healthcare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Healthcare.swift; sourceTree = "<group>"; };
+		15987D881FF42C4B0056224C /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
+		15987D8A1FF42D1A0056224C /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		15987D8C1FF42E070056224C /* PIN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIN.swift; sourceTree = "<group>"; };
+		15987D8E1FF42E440056224C /* PostalAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalAddress.swift; sourceTree = "<group>"; };
 		15B9D8811FF3E50800327153 /* Lasp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lasp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15B9D8841FF3E50800327153 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15B9D8891FF3E50800327153 /* Lasp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lasp.xcdatamodel; sourceTree = "<group>"; };
@@ -77,6 +87,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15987D851FF42AFC0056224C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15987D861FF42B180056224C /* Healthcare.swift */,
+				15987D881FF42C4B0056224C /* Hospital.swift */,
+				15987D8A1FF42D1A0056224C /* Patient.swift */,
+				15987D8C1FF42E070056224C /* PIN.swift */,
+				15987D8E1FF42E440056224C /* PostalAddress.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		15B9D8781FF3E50800327153 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +122,7 @@
 		15B9D8831FF3E50800327153 /* Lasp */ = {
 			isa = PBXGroup;
 			children = (
+				15987D851FF42AFC0056224C /* Model */,
 				15B9D8841FF3E50800327153 /* AppDelegate.swift */,
 				15B9D8B71FF3FE7400327153 /* HomePageViewController.swift */,
 				15B9D88B1FF3E50800327153 /* Assets.xcassets */,
@@ -265,8 +288,13 @@
 			files = (
 				15B9D8B81FF3FE7400327153 /* HomePageViewController.swift in Sources */,
 				15B9D8851FF3E50800327153 /* AppDelegate.swift in Sources */,
+				15987D8F1FF42E440056224C /* PostalAddress.swift in Sources */,
 				15B9D88A1FF3E50800327153 /* Lasp.xcdatamodeld in Sources */,
+				15987D8D1FF42E070056224C /* PIN.swift in Sources */,
+				15987D871FF42B180056224C /* Healthcare.swift in Sources */,
+				15987D8B1FF42D1A0056224C /* Patient.swift in Sources */,
 				15B9D8B61FF3F2A800327153 /* CoreDataStack.swift in Sources */,
+				15987D891FF42C4B0056224C /* Hospital.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
