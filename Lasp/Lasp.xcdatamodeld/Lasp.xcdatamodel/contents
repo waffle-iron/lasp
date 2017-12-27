@@ -1,4 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Healthcare" representedClassName=".Healthcare" syncable="YES">
+        <attribute name="alternateName" attributeType="String" syncable="YES"/>
+        <attribute name="legalName" attributeType="String" syncable="YES"/>
+        <attribute name="telephone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="address" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PostalAddress" inverseName="healthcare" inverseEntity="PostalAddress" syncable="YES"/>
+        <relationship name="patients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Patient" inverseName="healthcare" inverseEntity="Patient" syncable="YES"/>
+        <fetchIndex name="byPropertyIndex">
+            <fetchIndexElement property="alternateName" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="Hospital" representedClassName=".Hospital" syncable="YES">
+        <attribute name="alternateName" attributeType="String" syncable="YES"/>
+        <attribute name="branchCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="legalName" attributeType="String" syncable="YES"/>
+        <attribute name="telephone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="address" maxCount="1" deletionRule="Cascade" destinationEntity="PostalAddress" inverseName="hospital" inverseEntity="PostalAddress" syncable="YES"/>
+        <relationship name="patients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Patient" inverseName="hospitals" inverseEntity="Patient" syncable="YES"/>
+        <relationship name="pins" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PIN" inverseName="hospital" inverseEntity="PIN" syncable="YES"/>
+        <fetchIndex name="byPropertyIndex">
+            <fetchIndexElement property="alternateName" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="Patient" representedClassName=".Patient" syncable="YES">
+        <attribute name="birthDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" attributeType="String" syncable="YES"/>
+        <attribute name="occupation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="religion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="telephone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="addresses" toMany="YES" deletionRule="Cascade" destinationEntity="PostalAddress" inverseName="patients" inverseEntity="PostalAddress" syncable="YES"/>
+        <relationship name="healthcare" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Healthcare" inverseName="patients" inverseEntity="Healthcare" syncable="YES"/>
+        <relationship name="hospitals" toMany="YES" deletionRule="Nullify" destinationEntity="Hospital" inverseName="patients" inverseEntity="Hospital" syncable="YES"/>
+        <relationship name="pins" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PIN" inverseName="patient" inverseEntity="PIN" syncable="YES"/>
+        <fetchIndex name="byPropertyIndex">
+            <fetchIndexElement property="lastName" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="PIN" representedClassName=".PIN" syncable="YES">
+        <attribute name="identifier" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="hospital" maxCount="1" deletionRule="Nullify" destinationEntity="Hospital" inverseName="pins" inverseEntity="Hospital" syncable="YES"/>
+        <relationship name="patient" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="pins" inverseEntity="Patient" syncable="YES"/>
+        <fetchIndex name="byPropertyIndex">
+            <fetchIndexElement property="identifier" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="PostalAddress" representedClassName=".PostalAddress" syncable="YES">
+        <attribute name="addressCity" attributeType="String" syncable="YES"/>
+        <attribute name="addressCountry" attributeType="String" syncable="YES"/>
+        <attribute name="addressRegion" attributeType="String" syncable="YES"/>
+        <attribute name="postalCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="streetAddress" attributeType="String" syncable="YES"/>
+        <relationship name="healthcare" maxCount="1" deletionRule="Nullify" destinationEntity="Healthcare" inverseName="address" inverseEntity="Healthcare" syncable="YES"/>
+        <relationship name="hospital" maxCount="1" deletionRule="Nullify" destinationEntity="Hospital" inverseName="address" inverseEntity="Hospital" syncable="YES"/>
+        <relationship name="patients" toMany="YES" deletionRule="Nullify" destinationEntity="Patient" inverseName="addresses" inverseEntity="Patient" syncable="YES"/>
+        <fetchIndex name="byPropertyIndex">
+            <fetchIndexElement property="addressCity" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <elements>
+        <element name="Patient" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="Hospital" positionX="-54" positionY="54" width="128" height="150"/>
+        <element name="PostalAddress" positionX="-36" positionY="63" width="128" height="165"/>
+        <element name="PIN" positionX="-27" positionY="108" width="128" height="90"/>
+        <element name="Healthcare" positionX="-18" positionY="117" width="128" height="120"/>
+    </elements>
 </model>
