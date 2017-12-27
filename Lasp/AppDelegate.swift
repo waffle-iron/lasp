@@ -15,6 +15,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        let mainContext = createMainContext()
+        let firstViewController = getFirstViewController()
+        firstViewController.managedObjectContext = mainContext
+    }
+    
+    func getFirstViewController() -> HomePageViewController {
+        let firstVC = NSApplication.shared.mainWindow?.contentViewController as! HomePageViewController
+        return firstVC
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
