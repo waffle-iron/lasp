@@ -8,8 +8,10 @@
 
 import Cocoa
 
-class HomePageViewController: NSViewController {
-
+class HomePageViewController: NSViewController, ManagedObjectContextDependentType {
+    
+    var managedObjectContext: NSManagedObjectContext!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.

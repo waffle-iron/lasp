@@ -101,13 +101,13 @@
 			isa = PBXGroup;
 			children = (
 				15B9D8841FF3E50800327153 /* AppDelegate.swift */,
+				15B9D8B71FF3FE7400327153 /* HomePageViewController.swift */,
 				15B9D88B1FF3E50800327153 /* Assets.xcassets */,
 				15B9D88D1FF3E50800327153 /* Main.storyboard */,
 				15B9D8901FF3E50800327153 /* Info.plist */,
 				15B9D8911FF3E50800327153 /* Lasp.entitlements */,
 				15B9D8881FF3E50800327153 /* Lasp.xcdatamodeld */,
 				15B9D8B51FF3F2A800327153 /* CoreDataStack.swift */,
-				15B9D8B71FF3FE7400327153 /* HomePageViewController.swift */,
 			);
 			path = Lasp;
 			sourceTree = "<group>";
